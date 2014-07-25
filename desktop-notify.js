@@ -95,6 +95,9 @@
                 "ieVerification": ieVerification + 1
             };
         }
+        if (options.clickCallback){  // add onclick event  by: RaySnow 2014.07.25
+            notification.onclick = options.clickCallback
+        }
         return notification;
     }
     function getWrapper(notification) {
