@@ -143,9 +143,10 @@ The <b>notify</b> global object provides a single global namespace within which 
                     	<p>clickCallback -- function for onclick event. (test in chrome only)</p>
                     	<p>use like:</p>
                     	<pre>
-			        callback = function(){window.focus()}
+			        callback = function(){window.focus()}   // it will back to your app page when user click the notification
 			        notify.createNotification "Title", {body: "body", icon:"/static/img/news.ico", tag: "tag", clickCallback: callback}
                     	</pre>
+                    
                     </li>
                     
                 </ul>
