@@ -138,6 +138,16 @@ The <b>notify</b> global object provides a single global namespace within which 
                     <li>icon / String/Object / (required) -- The icon that will be set as a custom overlay for IE and notification displayed from Chrome running on Windows. Note that icon by default is not required for Chrome, Safari & Firefox, but is required for IE. In order to unify the implementations, the icon should be always provided in order to display notifications for all supported browsers. icon param could be String with icon's location, but it could be also an Object with the following properties: {"x16": Icon for IE only. The icon should be 16x16px *.ico format, "x32": Icon for all other browsers(Chrome on Windows, Firefox). The icon's size should be 32x32px, supported formats: jpg/png/ico}. Once again - Safari and Chrome on MacOS does not allow icon to be set. For Firefox Mobile, the icon is always Firefox icon. </li>
                     <li>tag -- The notification’s unique identifier. This prevents duplicate entries from appearing in Notification Center if the user has multiple instances of your website open at once. (Apply for Chrome & Safari only)</li>
                     <li>timeout -- interval for auto-closing notification. (Does not work for Chrome on MacOS)</li>
+                    
+                    <li>
+                    	<p>clickCallback -- function for onclick event. (test in chrome only)</p>
+                    	<p>use like:</p>
+                    	<pre>
+			        callback = function(){window.focus()}
+			        notify.createNotification "Title", {body: "body", icon:"/static/img/news.ico", tag: "tag", clickCallback: callback}
+                    	</pre>
+                    </li>
+                    
                 </ul>
             </li>
         </ul>
